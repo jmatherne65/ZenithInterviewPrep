@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { ChakraProvider, VStack, HStack, Input, Button, Checkbox, Heading, Text, Box, IconButton, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, List, ListItem } from '@chakra-ui/react';
 import { GiSkateboard } from "react-icons/gi";
+import '@fontsource-variable/league-spartan/'
+import '@fontsource-variable/orbitron/'
+
 
 interface Todo {
     id: number;
@@ -39,12 +42,12 @@ const TodoList: React.FC = () => {
     return (
         <ChakraProvider>
             <Box alignSelf="flex-start" mt="0" mb="4" ml="2">
-                <Heading as="h1" size="2xl" fontWeight="extrabold">
+                <Heading as="h1" size="2xl" fontWeight="extrabold" fontFamily= 'Orbitron'>
                     TONY HAWK'S
                 </Heading>
             </Box>
             <Box alignSelf="start" ml="160">
-                <Text fontSize='2xl'>
+                <Text fontSize='2xl' textColor='pink.500'>
                     AMERICAN TO-DO LIST
                 </Text>
             </Box>
@@ -58,8 +61,9 @@ const TodoList: React.FC = () => {
                             placeholder="Do a Gnarly 360"
                             aria-label="Task input"
                             flex="1"
+                            focusBorderColor='pink.500'
                         />
-                        <IconButton onClick={addTodo} colorScheme="blue" aria-label={'Do A Flip'} size="lg" icon={< GiSkateboard />}>Add</IconButton>
+                        <IconButton onClick={addTodo} colorScheme="pink" aria-label={'Do A Flip'} size="lg" icon={< GiSkateboard />}>Add</IconButton>
                     </HStack>
                     {todos.length === 0 ? (
                         <Text>No tricks added yet.</Text>
@@ -71,6 +75,7 @@ const TodoList: React.FC = () => {
                                         isChecked={todo.completed}
                                         onChange={() => toggleTodo(todo.id)}
                                         flex="1"
+                                        colorScheme='pink'
                                     >
                                         {todo.text}
                                     </Checkbox>

@@ -6,7 +6,7 @@ import theme from './components/themeelements.tsx'
 const App: React.FC = () => {
   return (
     <ChakraProvider theme={theme}>
-    <Box bg="gray.100" minH="100vh" py={2}>
+    <Box bg="green.40" minH="100vh" py={2}>
         <VStack>
           <TodoList />
         </VStack>
